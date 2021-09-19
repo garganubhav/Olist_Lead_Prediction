@@ -30,12 +30,14 @@ jobs:
         run: |
               sudo apt-get upgrade git
               sudo apt-get upgrade python3-pip
- 
+              docker login -u $USER -p $PASS docker.io
               chmod +x ./version.py
               chmod +x ./register.sh
               export CHANGE=$(python3 ./version.py $(git diff-tree --no-commit-id --name-only -r $GITHUB_SHA))
               sh ./register.sh 
               
         env:
+          USER: ${{secrets.DOCKER_USERNAME}}
+          PASS: ${{secrets.DOCKER_PASS}}
           BUILD_IMAGE_LOCAL: olist
 
