@@ -29,7 +29,7 @@ jobs:
       - name: Run a one-line script
         run: |
               sudo apt-get upgrade git
-              sudo apt-get upgrade --no-cache curl jq python3 py3-pip
+              sudo apt-get upgrade curl jq python3 py3-pip
  
               chmod +x ./version.py
               chmod +x ./register.sh
