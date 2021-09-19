@@ -28,8 +28,8 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: |
-              apt-get add git
-              apt-get add --no-cache curl jq python3 py3-pip
+              apt-get install git
+              apt-get install --no-cache curl jq python3 py3-pip
  
               chmod +x ./version.py
               chmod +x ./register.sh
