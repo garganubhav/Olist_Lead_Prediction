@@ -33,7 +33,7 @@ jobs:
  
               chmod +x ./version.py
               chmod +x ./register.sh
-              export CHANGE=$(python3 ./version.py $(git diff-tree --no-commit-id --name-only -r $CI_COMMIT_SHA))
+              export CHANGE=$(python3 ./version.py $(git diff-tree --no-commit-id --name-only -r $GITHUB_SHA))
               if [[ $CHANGE -eq 1 ]]; then ./register.sh ; fi
               
         env:
