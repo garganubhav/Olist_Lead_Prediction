@@ -42,6 +42,6 @@ def index():
 
 if __name__ == '__main__':
 
-    model = j.load(open('models/model.joblib', 'rb'))
+    model = j.load(open('model.joblib', 'rb'))
     
     app.run(debug=True, host='0.0.0.0', port=5000)
